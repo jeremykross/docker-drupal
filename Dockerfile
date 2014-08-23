@@ -11,7 +11,7 @@ RUN apt-get -qqy install \
     vim-tiny php5-mysql php-apc php5-gd \
     php5-memcache memcached drush mc \
     mysql-server curl apache2-utils php-apc \
-    postgresql-client php5-pgsql && \
+    postgresql-client php5-pgsql php5-ldap && \
     apt-get clean
 
 RUN a2enmod rewrite vhost_alias
