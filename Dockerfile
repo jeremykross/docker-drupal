@@ -34,7 +34,8 @@ RUN rm -rf /var/www/ && \
     ln -s /var/www/sites/ /sites && \
     mkdir -p /root/drush-backups
 
-RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default
+RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default && \
+    echo 'apc.rfc1867 = 1' >> /etc/php5/apache2/php.ini
 
 EXPOSE 80
 EXPOSE 22
