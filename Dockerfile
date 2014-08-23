@@ -25,10 +25,6 @@ RUN rm -rf /var/www/ && \
     tar czf sites.tgz sites && \
     rm -rf sites && \
     \
-     cd /var/lib && \
-    tar czf mysql.tgz mysql && \
-    rm -rf mysql && \
-    \
     mkdir -p /data/ && \
     ln -sf /data/sites /var/www/sites && \
     mkdir -p /root/.ssh && \
@@ -37,9 +33,7 @@ RUN rm -rf /var/www/ && \
     ln -s /var/www/sites/ /sites && \
     mkdir -p /root/drush-backups
 
-RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default && \
-    sed -i 's/^bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/my.cnf && \
-    sed -i 's/^datadir.*/datadir = \/data\/mysql/' /etc/mysql/my.cnf
+RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default
 
 EXPOSE 80
 EXPOSE 22
