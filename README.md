@@ -1,4 +1,4 @@
 docker-drupal
 =============
 
-drupal in docker
+drupal in docker without database
