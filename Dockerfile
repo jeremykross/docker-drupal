@@ -5,7 +5,7 @@ RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe > /etc/apt/s
     apt-get -qqy update
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get udpate && apt-get upgrade -qqy
+RUN apt-get update && apt-get upgrade -qqy
 RUN apt-get -qqy install \
     git mysql-client apache2 php5-memcache \
     libapache2-mod-php5 pwgen python-setuptools \
