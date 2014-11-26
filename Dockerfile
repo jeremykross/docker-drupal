@@ -2,7 +2,7 @@ FROM debian:stable
 MAINTAINER Taylor "Nekroze" Lawson <tlawson@nekroze.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -qqy install \
+RUN apt-get update && apt-get -qqy install \
     git mysql-client apache2 php5-memcache \
     libapache2-mod-php5 pwgen python-setuptools \
     vim-tiny php5-mysql php-apc php5-gd \
