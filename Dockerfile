@@ -1,4 +1,4 @@
-FROM ubuntu:precise
+FROM ubuntu:12.04.5
 MAINTAINER Taylor "Nekroze" Lawson <tlawson@nekroze.com>
 
 RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe > /etc/apt/sources.list && \
