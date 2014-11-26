@@ -1,5 +1,5 @@
-FROM moul/tmux
-MAINTAINER Manfred Touron <m@42.am>
+FROM ubuntu:precise
+MAINTAINER Taylor "Nekroze" Lawson <tlawson@nekroze.com>
 
 RUN echo deb http://archive.ubuntu.com/ubuntu precise main universe > /etc/apt/sources.list && \
     apt-get -qqy update
