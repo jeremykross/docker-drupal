@@ -1,12 +1,5 @@
 #!/bin/bash
 
-echo "Starting SSHD"
-/usr/sbin/sshd -D &
-
-if [ -f /data/ssh-pw.txt ]; then
-    echo "root:$(cat /data/ssh-pw.txt)" | chpasswd
-fi
-
 if [ -d /data/php5 ]; then
     rm -rf /etc/php5
     ln -s /data/php5 /etc/php5
@@ -35,6 +28,9 @@ if [ ! -f /data/sites/default/settings.php ]; then
     cd /var/www/
     drush site-install standard -y --account-name=admin --account-pass=admin --db-url="${DB_TYPE}://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
 fi
+
+sed -i "s/'host' => '.*/'host' => '$DB_HOST',/" /data/sites/default/settings.php
+sed -i "s/'port' => '.*/'port' => '$DB_PORT',/" /data/sites/default/settings.php
 
 echo "Starting Supervisord"
 supervisord -n

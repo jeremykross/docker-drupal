@@ -1,5 +1,5 @@
 FROM debian:stable
-MAINTAINER Taylor "Nekroze" Lawson <tlawson@nekroze.com>
+MAINTAINER ContainerShip Developers <developers@containership.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -qqy install \
