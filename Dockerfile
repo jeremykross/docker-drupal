@@ -35,7 +35,6 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-availabl
     echo 'apc.rfc1867 = 1' >> /etc/php5/apache2/php.ini
 
 EXPOSE 80
-EXPOSE 22
 VOLUMES ["/data"]
 CMD ["/bin/bash", "/start.sh"]
 
